@@ -3,23 +3,14 @@
 
 #### jacking crutchy's exec script template:
 # gpl2
-# by crutchy
+# by chromas
 # 17-may-2014
 
-//ini_set("display_errors","on"); # Too talkative; shows my php incompetence :-D
-
-require_once("lib.php");
+ini_set("display_errors","on"); # Too talkative; shows my php incompetence :-D
 
 # alias|timeout|repeat|auto-privmsg|empty-trailing-allowed|php scripts/template.php %%trailing%% %%dest%% %%nick%% %%start%% %%alias%% %%cmd%% %%data%% %%exec%% %%params%%
 $trailing=$argv[1];
-$dest=$argv[2];
-$nick=$argv[3];
-$start=$argv[4];
-$alias=$argv[5];
-$cmd=$argv[6];
-$data=$argv[7];
-$exec=$argv[8];
-$params=$argv[9];
+$nick=$argv[2];
 ####
 
 //$trailing = $argv[1]; # For local testing, disable above block and use this, M'kay?

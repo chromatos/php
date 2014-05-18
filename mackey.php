@@ -113,7 +113,7 @@ $low         = strtolower($trailing);
 #$nick        = "2b"; # set by exec as the message sender
 $theSentence = "";
 
-if (((strpos($low,"mkay") === false) && (strpos($low, "m'kay") === false)))
+if ((strpos($low,"mkay") === false) && (strpos($low, "m'kay") === false))
 {   $theSentence .= prefix();
 
     if (rand(0,2) == 0)      # We'll change it sometimes for fun.

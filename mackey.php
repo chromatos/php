@@ -80,6 +80,7 @@ function prefix()
         case 4: return("you see, kids, ");
         case 5: return("now ");
         case 6: return("uh ");
+        default: return "";
     }
 }
 
@@ -87,6 +88,7 @@ function singularInfix()
 {   switch (rand(0,3))
     { case 0: return("a ");
       case 1: return("the ");
+      default: return "";
     }
 }
 
@@ -95,6 +97,7 @@ function postfix()
     {   case 0: return(".");
         case 1: return("?");
         case 2: return("!");
+        default: return "";
     }
 }
 
@@ -107,10 +110,10 @@ function sentence()
 }
 
 $low         = strtolower($trailing);
-$nick        = "2b";
+#$nick        = "2b"; # set by exec as the message sender
 $theSentence = "";
 
-if (strpos($low,"mkay") === false && strpos($low, "m'kay") === false)
+if ((strpos($low,"mkay") === false) && (strpos($low, "m'kay") === false))
 {   $theSentence .= prefix();
 
     if (rand(0,2) == 0)      # We'll change it sometimes for fun.
@@ -124,9 +127,10 @@ if (strpos($low,"mkay") === false && strpos($low, "m'kay") === false)
     {   $verb = " is";
         $theSentence .= singularInfix();
     }
+    $theSentence.=sentence().postfix();
     if (rand(0,1))
         $theSentence[0] = strtoupper($theSentence[0]);
-    print $theSentence.sentence().postfix();
+    print $theSentence;
 }
 else
     print "m'kay";

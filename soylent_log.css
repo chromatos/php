@@ -1,0 +1,19 @@
+body {background: #111; color: #c0c0c0;}
+table {border: solid 1px #333; background:#222;border-collapse: collapse;}
+tr {border: none;}
+td {vertical-align: text-top;padding-left: .5em; padding-right: .5em;}
+.channel {border-right: solid 1px #111;}
+.time {whitespace: nowrap !important;}
+.nick {background: #333; text-align: right;}
+.nick-0 {color: #a44;}
+.nick-1 {color: #4a4;}
+.nick-2 {color: #aa4;}
+.nick-3 {color: #a4a;}
+.nick-4 {color: #4aa;}
+.nick-5 {color: #faa;}
+.nick-6 {color: #afa;}
+.nick-7 {color: #aaf;}
+.nick-8 {color: #faf;}
+.nick-8 {color: #aff;}
+
+.action {background: #333; color: #ccc; font-style: italic;}

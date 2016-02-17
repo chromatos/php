@@ -16,6 +16,8 @@
 	$type		= strtolower($_GET['type']);
 	$debug		= $_GET['debug'] != "";
 
+	if ($out == "" && $operation != "source") $out = "html";
+
 	if ($out == "html")
 		header('Content-Type: text/html; charset=utf-8');
 	else
@@ -63,7 +65,8 @@ op=all); type [message (plain+action; default), plain, action, nick, mode, join,
 	
 	if ($type != "")
 	{	switch($type)
-		{	case "message":
+		{	case "all": break;
+			case "message":
 				$query.= "and (type = '1' or type = '4') ";
 				break;
 			case "plain":
@@ -126,7 +129,7 @@ if ($until_time != "")
 	{	$query.= "order by random() ";
 	}
 	else if ($operation != "count")
-	{	$query .= "ORDER BY time "; 
+	{	$query .= "ORDER BY time ";
 
 		if ($operation == "last")
 			$query .= "desc ";
